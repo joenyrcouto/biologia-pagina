@@ -38,12 +38,54 @@
         background-size: cover;
         box-shadow: -25px -25px 25px rgba(0, 0, 0, 0.507) inset, 10px 10px 30px rgba(255, 255, 255, 0.822) inset, 0px 0px 35px rgba(3, 72, 99, 0.747);
         animation: rotate 35s linear infinite;
+        rotate: 23.26deg;
     }
     @keyframes rotate{
         from{background-position: left center;}
         to{background-position: right center;}
     }
 </style>
+<script>
+    (function() {
+    "user strict";
+
+    var i, j, textos, teste, target;
+
+    textos = [
+        "Bem Vindo!",
+        "aqui",
+        "serao",
+        "as mensagens",
+        "de curioidades",
+        "Em um loop",
+        "Infinito!!!"
+    ];
+
+    i = 0;
+    j = textos.length;
+
+    teste = function () {
+        if (target) {//Verificar se o elemento DOM já existe na página
+            target.innerHTML = textos[i];
+            i++;
+            if (i === j){
+                i = 0;
+            }
+
+            //1000 = 1seg, 2000 = 2segs e por ai vai....
+            window.setTimeout(teste, 2000);
+        } else {
+            //Se o elemento ainda não foi "renderizado" tenta busca-lo novamente
+            target = document.getElementById("texto");
+
+            //O timeout é mais rápido aqui para que quando o elemento estiver disponivel o script iniciei sem o delay de 2 segundos.
+            window.setTimeout(teste, 100);
+        }
+    };
+
+    teste();//Inicia o processo
+})();
+</script>
 <body style=" background-image: url(imagens/fundo.jpeg);">
     <div style="background-color: rgba(3, 180, 121, 0.671); text-align: center; border:2px solid #50a104;">
         <a href="https://github.com/joenyrcouto/biologia_pagina" target="_blank"><img src="imagens/detalhe.png" width="70" height="70"></a>
@@ -113,8 +155,9 @@
     </div>
 </div>
 <div class="globe">
-
 </div>
-    <div style="text-align: right; background-color: rgba(0, 0, 0, 0);"><sub>turma: inf241. alunos: Joenyr, Ray, Rapahel, Paulo, Willyans.</sub></div>
+<div class="paragrafo"><p id="texto"></p></div>
+<div style="text-align: right; background-color: rgba(0, 0, 0, 0);"><sub>turma: inf241. alunos: Joenyr, Ray, Rapahel, Paulo, Willyans.</sub>
+</div>
 </body>
 </html>
