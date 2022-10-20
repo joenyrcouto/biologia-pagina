@@ -1,102 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Briófitas</title>
-    <link rel="icon" href="imagens/musgo.png">
+    <title>Reino plantae</title>
+    <link rel="icon" href="imagens/logo.png">
 </head>
 <style>
     div {background-color: rgba(3, 180, 121, 0.322);}
 
-    .paragrafo{font-size: 20px;
-    text-indent: 15px;
+    .bloco {text-align: center;}
+
+    .blocos {display: grid;
+    grid-template-columns: 0.15fr 0.85fr 0.15fr 0.85fr 0.15fr 0.85fr 0.15fr 0.85fr;
+    gap: 10px;
+    background-color: #00000000;
+    }
+
+    .blocos2 {display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    background-color: #00000000;}
+
+    .paragrafo{text-indent: 15px;
     padding: 10px;
     margin: 10px;}
+
+    .globe {width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        background-image: url(imagens/mapa.jpg);
+        background-size: cover;
+        box-shadow: -25px -25px 25px rgba(0, 0, 0, 0.507) inset, 10px 10px 30px rgba(255, 255, 255, 0.822) inset, 0px 0px 35px rgba(3, 72, 99, 0.747);
+        animation: rotate 235.604s linear infinite;
+        rotate: 23.26deg;
+    }
+    @keyframes rotate{
+        from{background-position: left center;}
+        to{background-position: right center;}
+    }
 </style>
+<script>
+    (function() {
+    "user strict";
+
+    var i, j, textos, teste, target;
+
+    textos = [
+    "As briófitas, como primeira forma de vida vegetal no solo, formam um grupo de ampla distribuição, podendo ser encontradas em diversos ambientes.",
+"Algumas briófitas são flutuantes em lago e açudes, e outras podem viver submersas; contudo não são encontradas em água salgada.",
+"Briófitas colonizam larga de substratos naturais, como troncos, ramos, galhos e folhas (epifilo), além de solos, rochas, como também fungos não linquenizados (que não vivem em simbiose com outro organismo).",
+"Briófitas são ruderais, facilmente encontradas em muro de casas, no solo, parede de edifícios e tronco de árvores, além de preferirem ambientes úmidos e sombrios.",
+"Pteridófitas apresentam o corpo na forma de cormo, isto é, com raiz, caule e folhas verdadeiros.",
+"Pteridófitas podem ainda ser classificadas como plantas criptógamas, por não produzirem flores.",
+"Pteridófitas são muito usadas como plantas ornamentais, principalmente as samambaias.",
+"As plantas pteridófitas foram as primeiras que desenvolveram um sistema destinado ao transporte de seiva.",
+"As gminospermas foram definitivamente as primeiras plantas a conquistarem o ambiente terrestre, pois não dependem mais da água do ambiente para a fecundação.",
+"O embrião das gminospermas são protegidos na semente, uma estrutura que possui reservas nutritivas e uma proteção contra a desidratação.",
+"As flores das gminospermas são unissexuadas, ou seja, ou masculinas ou femininas. As flores são reunidas em cones ou estróbilos (inflorescência comoactas).",
+"As gminospermas não apresentam verdadeiros frutos, por não apresentarem ovários.",
+"As flores das angiospermas em geral possuem néctarios de modo que atraem insetos e pássaros, caindo os grãos de pólen no estigma do carpelo onde germinam e se desenvolvem.",
+"As angiospermas possuem ovário, por isso produzem verdadeiros frutos.",
+"A estrutura reprodutora das angiospermas são as flores.",
+"Os gametas masculinos das angiospermas não são flagelados, logo são transportados nos grãos de pólen."
+    ];
+
+    j = textos.length;
+    i = Math.floor(Math.random() * j);
+
+    teste = function () {
+        if (target) {//Verificar se o elemento DOM já existe na página
+            target.innerHTML = textos[i];
+            i = Math.floor(Math.random() * j);
+            if (i === j){
+                i = 0;
+            }
+
+            //1000 = 1seg, 2000 = 2segs e por ai vai....
+            window.setTimeout(teste, 10000);
+        } else {
+            //Se o elemento ainda não foi "renderizado" tenta busca-lo novamente
+            target = document.getElementById("texto");
+
+            //O timeout é mais rápido aqui para que quando o elemento estiver disponivel o script iniciei sem o delay de 2 segundos.
+            window.setTimeout(teste, 100);
+        }
+    };
+
+    teste();//Inicia o processo
+})();
+</script>
 <body style=" background-image: url(imagens/fundo.jpeg);">
     <div style="background-color: rgba(3, 180, 121, 0.671); text-align: center; border:2px solid #50a104;">
-        <h1>
-            <a style="color: black;" href="https://joenyrcouto.github.io/biologia_pagina/">Briófitas</a>
-        </h1>
+        <a href="https://github.com/joenyrcouto/biologia_pagina" target="_blank"><img src="imagens/logo.png" width="70" height="70"></a>
     </div>
     <div class="paragrafo">
-        <h2>
-            • O que são plantas Briófitas
-        </h2>
-        <p>
-            Briófitas são plantas de pequeno porte encontradas principalmente em áreas úmidas. Musgos, hepáticas e antóceros são exemplos de briófitas. Os musgos são plantas de pequeno porte que formam verdadeiros tapetes verdes. Briófitas são plantas avasculares que apresentam como representantes musgos, hepáticas e antóceros.
-        </p>
-        <div style="background-color: rgba(0, 0, 0, 0); text-align: center;">
-        <img src="imagens1/img1.webp">
-        </div>
+        <p>Botânica é o ramo da biologia que estuda as plantas, estas todas que estão incluídas no reino plantae, o qual tem como características: células eucariontes, multicelulares, autotróficos, e fotossitetizantes, e certas classificações a quais serão tratadas nesse site.</p>
     </div>
-    <div class="paragrafo">
-        <h2>
-            • Características das plantas Briófitas
-        </h2>
-        <p>
-            as principais características das briófitas:
-são plantas avasculares, ou seja, não têm vasos condutores de seiva; têm rizoide (análogo à raiz, tem a função de fixação da planta no solo e de retirada de nutrientes do ambiente); 
-        </p>
-        <div style="background-color: rgba(0, 0, 0, 0); text-align: center;">
-        <img src="imagens1/img2.webp" width="532" height="350">
-        </div>
-        <p>
-            têm cauloide (análogo ao caule, é um eixo pequeno que serve para a fixação dos filoides); têm filoides (pequenas lâminas cuja principal função é a realização da fotossíntese);
-        <p>
-            habitam, normalmente, ambientes terrestres úmidos (com água doce); têm reprodução com alternância de gerações. As briófitas são extremamente abundantes no planeta Terra e, portanto, muito importantes para a sobrevivência dos seres humanos. A seguir, descobriremos ainda mais sobre essas plantas!
-        </p>
+<div class="blocos">
+    <div style="margin: auto; padding: 10px; border-radius: 10px;">
+        <a href="page1.html"><img src="imagens/musgo.png" width="40" height="40"></a>
     </div>
-    <div class="paragrafo" text-align="center">
-        <h2>
-            • Habitat das plantas Briófitas
-        </h2>
-        <p>
-            Ainda que sejam os primeiros indivíduos presentes no ambiente terrestre, as briófitas são altamente dependentes de água, tanto para o transporte de nutrientes quanto para reprodução. Por isso, são encontradas, na maioria das vezes, em ambientes úmidos, próximos a locais de água-doce e com sombras.
-        </p>
-        <div style="background-color: rgba(0, 0, 0, 0); text-align: center;">
-        <img src="imagens1/img3.jpg" width="532" height="350">
-        </div>
+    <div>
+        <p class="bloco"><a href="page1.html"><u style="color: black">Briófitas</u></a></p>
+    </div>
+    <div style="margin: auto; padding: 10px; border-radius: 10px;">
+        <a href="https://github.com/joenyrcouto/biologia_pagina" target="_blank"><img src="imagens/samambaia.png" width="30" height="30"></a>
+    </div>
+    <div>
+        <p class="bloco"><a href="https://google.com" target="_blank"><u style="color: black;">Pteridófitas</u></a></p>
+    </div>
+    <div style="margin: auto; padding: 10px; border-radius: 10px;">
+        <a href="https://github.com/joenyrcouto/biologia_pagina" target="_blank"><img src="imagens/pinheiro.png" width="30" height="30"></a>
+    </div>
+    <div>
+        <p class="bloco"><a href="https://google.com" target="_blank"><u style="color: black;">Gminospermas</u></a></p>
+    </div>
+    <div style="margin: auto; padding: 10px; border-radius: 10px;">
+        <a href="page4.html" ><img src="imagens/palmeira.png" width="30" height="30"></a>
+    </div>
+    <div>
+        <p class="bloco"><a href="page4.html"> <u style="color: black;">Angiospermas</u></a></p>
     </div>
 </div>
-<div class="paragrafo" text-align="center">
-    <h2>
-        • Ciclo de vida das plantas briófitas
-    </h2>
-    <p>
-        O ciclo de vida das briófitas é caracterizado pela alternância de gerações, isto é, apresenta uma fase gametofítica (que produz gametas) e uma fase esporofítica (que produz esporos). A fase gametofítica é mais desenvolvida e duradoura no ciclo de vida dessas plantas e caracteriza-se por ser uma fase haploide.
-    </p>
-    <div style="background-color: rgba(0, 0, 0, 0); text-align: center;">
-    <img src="imagens1/img4.jpg" width="532" height="350">
+<div class="blocos2" style="margin-top: 5px;">
+    <div>
+        <ul>
+            <li>Sem vasos condutores;</li>
+            <li>Gametófito dominante.</li>
+            <p class="paragrafo">Exemplo: Musgos.</p>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>Presença de vasos condutores;</li>
+            <li>Folhas e caules;</li>
+            <li>esporófito dominante.</li>
+            <p class="paragrafo">Exemplo: Samambaia, xaxins.</p>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>Não possuem flores;</li>
+            <li>Presença de sementes;</li>
+            <li>Grão de polen;</li>
+            <li>Tubo polínico;</li>
+            <li>Crescimento lateral.</li>
+            <p class="paragrafo">Exemplo: pinheiro.</p>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>Possuem flores;</li>
+            <li>Sementes protegidas;</li>
+            <li>Presença de frutos.</li>
+            <p class="paragrafo">Exemplo: palmeiras, bambus, demais plantas arbusteiras.</p>
+        </ul>
     </div>
 </div>
-<div class="paragrafo" text-align="center">
-    <h2>
-        • Classificação das plantas Briófitas
-    </h2>
-    <p>
-        As briófitas atualmente são divididas em três filos:
-</p>
-<p>
-    "Marchantiophyta: Nesse grupo, encontramos as hepáticas, as quais se destacam por não possuírem estômatos, uma estrutura presente nos outros grupos."
-    </p>
-    <div style="background-color: rgba(0, 0, 0, 0); text-align: center;">
-    <img src="imagens1/img5.jpeg" width="532" height="350">
-    </div>
-    <p>
-        "Bryophyta: Nesse grupo, encontramos briófitas com células especializadas na condução. As células que conduzem água, são chamadas de hidroides, e as que conduzem substâncias nutritivas são denominadas de leptoide."
-    </p>
-    <div style="background-color: rgba(0, 0, 0, 0); text-align: center;">
-    <img src="imagens1/img6.jpeg" width="532" height="350">
-    </div>
-    <p>
-        "Anthocerotophyta: Uma característica marcante desse grupo é a presença de um meristema basal típico, que aparece nos esporófitos na região entre o pé e a cápsula. Esse meristema permite que a cápsula continue alongando-se por período maior."
-    </p>
-    <div style="background-color: rgba(0, 0, 0, 0); text-align: center;">
-    <img src="imagens1/img7.jpeg" width="532" height="350">
-    </div>
+<div class="globe">
+</div>
+<div class="paragrafo"><p id="texto"></p></div>
+<div style="text-align: right; background-color: rgba(0, 0, 0, 0);"><sub>turma: inf241. alunos: Joenyr, Ray, Rapahel, Paulo, Willyans.</sub>
 </div>
 </body>
 </html>
