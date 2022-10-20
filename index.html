@@ -52,13 +52,22 @@
     var i, j, textos, teste, target;
 
     textos = [
-        "Bem Vindo!",
-        "aqui",
-        "serao",
-        "as mensagens",
-        "de curioidades",
-        "Em um loop",
-        "Infinito!!!"
+    "As briófitas, como primeira forma de vida vegetal no solo, formam um grupo de ampla distribuição, podendo ser encontradas em diversos ambientes.",
+"Algumas briófitas são flutuantes em lago e açudes, e outras podem viver submersas; contudo não são encontradas em água salgada.",
+"Briófitas colonizam larga de substratos naturais, como troncos, ramos, galhos e folhas (epifilo), além de solos, rochas, como também fungos não linquenizados (que não vivem em simbiose com outro organismo).",
+"Briófitas são ruderais, facilmente encontradas em muro de casas, no solo, parede de edifícios e tronco de árvores, além de preferirem ambientes úmidos e sombrios.",
+"Pteridófitas apresentam o corpo na forma de cormo, isto é, com raiz, caule e folhas verdadeiros.",
+"Pteridófitas podem ainda ser classificadas como plantas criptógamas, por não produzirem flores.",
+"Pteridófitas são muito usadas como plantas ornamentais, principalmente as samambaias.",
+"As plantas pteridófitas foram as primeiras que desenvolveram um sistema destinado ao transporte de seiva.",
+"As gminospermas foram definitivamente as primeiras plantas a conquistarem o ambiente terrestre, pois não dependem mais da água do ambiente para a fecundação.",
+"O embrião das gminospermas são protegidos na semente, uma estrutura que possui reservas nutritivas e uma proteção contra a desidratação.",
+"As flores das gminospermas são unissexuadas, ou seja, ou masculinas ou femininas. As flores são reunidas em cones ou estróbilos (inflorescência comoactas).",
+"As gminospermas não apresentam verdadeiros frutos, por não apresentarem ovários.",
+"As flores das angiospermas em geral possuem néctarios de modo que atraem insetos e pássaros, caindo os grãos de pólen no estigma do carpelo onde germinam e se desenvolvem.",
+"As angiospermas possuem ovário, por isso produzem verdadeiros frutos.",
+"A estrutura reprodutora das angiospermas são as flores.",
+"Os gametas masculinos das angiospermas não são flagelados, logo são transportados nos grãos de pólen."
     ];
 
     i = 0;
@@ -67,13 +76,13 @@
     teste = function () {
         if (target) {//Verificar se o elemento DOM já existe na página
             target.innerHTML = textos[i];
-            i++;
+            i = Math.floor(Math.random() * (j+1));
             if (i === j){
                 i = 0;
             }
 
             //1000 = 1seg, 2000 = 2segs e por ai vai....
-            window.setTimeout(teste, 6000);
+            window.setTimeout(teste, 11000);
         } else {
             //Se o elemento ainda não foi "renderizado" tenta busca-lo novamente
             target = document.getElementById("texto");
