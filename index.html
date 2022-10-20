@@ -37,7 +37,7 @@
         background-image: url(imagens/mapa.jpg);
         background-size: cover;
         box-shadow: -25px -25px 25px rgba(0, 0, 0, 0.507) inset, 10px 10px 30px rgba(255, 255, 255, 0.822) inset, 0px 0px 35px rgba(3, 72, 99, 0.747);
-        animation: rotate 210s linear infinite;
+        animation: rotate 235.604s linear infinite;
         rotate: 23.26deg;
     }
     @keyframes rotate{
@@ -70,19 +70,19 @@
 "Os gametas masculinos das angiospermas não são flagelados, logo são transportados nos grãos de pólen."
     ];
 
-    i = 0;
     j = textos.length;
+    i = Math.floor(Math.random() * j);
 
     teste = function () {
         if (target) {//Verificar se o elemento DOM já existe na página
             target.innerHTML = textos[i];
-            i = Math.floor(Math.random() * (j+1));
+            i = Math.floor(Math.random() * j);
             if (i === j){
                 i = 0;
             }
 
             //1000 = 1seg, 2000 = 2segs e por ai vai....
-            window.setTimeout(teste, 11000);
+            window.setTimeout(teste, 10000);
         } else {
             //Se o elemento ainda não foi "renderizado" tenta busca-lo novamente
             target = document.getElementById("texto");
